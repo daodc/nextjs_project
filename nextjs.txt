@@ -1,0 +1,91 @@
+1. Link:
+<p className="title">
+  Read{' '}
+  <Link href="/posts/first-post">
+    <a>this page!</a>
+  </Link>
+</p>
+
+Lưu ý: Nếu bạn cần phải liên kết đến một bên ngoài trang bên ngoài ứng dụng Next.js, chỉ cần sử dụng một <a>thẻ không Link.
+
+Ví dụ: nếu bạn cần thêm các thuộc tính như, classNamehãy thêm nó vào athẻ, không phải vào Linkthẻ. Đây là một ví dụ .
+// Example: Adding className with <Link>
+import Link from 'next/link'
+
+export default function LinkClassnameExample() {
+  // To add attributes like className, target, rel, etc.
+  // add them to the <a> tag, not to the <Link> tag.
+  return (
+    <Link href="/">
+      <a className="foo" target="_blank" rel="noopener noreferrer">
+        Hello World
+      </a>
+    </Link>
+  )
+}
+2. {' '} thêm một không gian trống, được sử dụng để phân chia văn bản trên nhiều dòng.
+3. Image
+<Image
+  src="/images/profile.jpg" // Route of the image file
+  height={216} // Desired size with correct aspect ratio
+  width={216} // Desired size with correct aspect ratio
+  alt="Bill Gate"
+/>
+4. Style:
+<style jsx>{`
+  …
+`}</style>
+
+5. inline styles:
+function HiThere() {
+  return <p style={{ color: 'red' }}>hi there</p>
+}
+
+export default HiThere
+
+6. How can I update npm on Windows?
+
+npm install -g npm-windows-upgrade
+npm-windows-upgrade
+npm i -g npm
+
+7. Add Sass: https://medium.com/officialrajdeepsingh/how-to-add-sass-scss-in-next-js-77a2b34f1ff3
+7.1. Install NPM Package In Your Project:
+- Use Npm Install Sass Package
++ npm i sass
+ or
++ npm i node-sass
+- Use Yarn Install Sass Package
++ yarn add sass
+ or 
++ yarn add node-sass
+- Use Npm Install It:
++ npm install @zeit/next-sass
+- Use Yarn Install It:
++ yarn add @zeit/next-sass
+7.2. Config File:
+- Tạo file next.config.js
+```
+const path = require('path')
+const withSass = require('@zeit/next-sass');
+module.exports = withSass({
+/* bydefault config  option Read For More Optios
+here https://github.com/vercel/next-plugins/tree/master/packages/next-sass*/
+cssModules: true
+})
+module.exports = {
+/* Add Your Scss File Folder Path Here */
+sassOptions: {
+includePaths: [path.join(__dirname, 'styles')],
+},
+}
+```
+7.3.Tạo File Sass File:
++ styles\about.module.scss
+- Import File:
++ import styles from '../styles/about.module.scss'
+<h2 className={styles.Red}>Get started</h2>
+ Create File Sass File:
+
+7.4. Import File:
+next.config.js
