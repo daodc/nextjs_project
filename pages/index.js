@@ -26,6 +26,11 @@ export default function Home() {
 					</Link>
 				</p>
         <p className="description">
+					<Link href="/news">
+						<a>News page!</a>
+					</Link>
+				</p>
+        <p className="description">
           <button
             type="button"
             // Note how the "error" class is accessed as a property on the imported
